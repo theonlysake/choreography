@@ -4,7 +4,7 @@
 
 ---
 
-choreographyjs is a *Promise-based* javascript module for animating elements in **PURE JAVASCRIPT!!!**.
+choreography is a *Promise-based* javascript module for animating elements in **PURE JAVASCRIPT!!!**.
 
 We combined Promises, the Web-Animations API, and our animation helper functions, to make it easier than ever to make elegant, customizable animations for use on your website.
 
