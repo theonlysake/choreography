@@ -1,6 +1,6 @@
-# choreographyjs
+# choreography
 
-*The best and only animation tool you'll ever need!*
+*The best and only web animation tool you'll ever need!*
 
 ---
 
