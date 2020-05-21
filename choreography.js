@@ -1691,9 +1691,9 @@ export async function orbit(element, options = {}){
 
 /**
  * Choreograph with a capital 'C' is a React component for crudely wrapping Elements in an empty Animatable container that does not affect the layout of the page.
- * @param {Object} props The props object to pass to the container element
+ * @param {Object} props The props to pass to the container
  */
-export default function Choreograph(props){
+export function Choreograph(props){
     import('react')
         .then(react => {
             const { children, ...otherProps } = props;
