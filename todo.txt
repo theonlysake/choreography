@@ -1,0 +1,134 @@
+ * @param {Object} options An Object whose properties hold details for the keyframe
+ * @param {Object} [options.grid] - CSS grid properties
+ * @param {string} [options.grid.area] - Default: null - Specify a grid area name for this item to be assigned to
+ * @param {Object} [options.grid.auto] - Default: null - rules for an auto-placed item grid
+ * @param {('auto'|'max-content'|'min-content'|'length')} [options.grid.auto.columns] - Default: null - Sets a size for the columns in a grid container.
+ * @param {('row'|'column'|'dense'|'row dense'|'column dense')} [options.grid.auto.flow] - Default: null - controls how auto-placed items get inserted in the grid.
+ * @param {('auto'|'max-content'|'min-content'|'length')} [options.grid.auto.rows] - Default: null - Sets a size for the rows in a grid container.
+ * @param {Object} [options.grid.column] - Default: null - Specifies a grid item's size and location in a grid layout
+ * @param {('auto'|'span n'|'column-line')} [options.grid.column.end] - Default: null - Specifies on which column-line to stop displaying the item, or how many columns to span.
+ * @param {'length'} [options.grid.column.gap] - Default: null - Defines the size of the gap between the columns in a grid layout.
+ * @param {('auto'|'span n'|'column-line')} [options.grid.column.start] - Default: null - Specifies on which column to start displaying the item.
+ * @param {Object} [options.grid.row] - Default: null - specifies a grid item's size and location in a grid layout,
+ * @param {('auto'|'row-line'|'span n')} [options.grid.row.end] - Default: null - Specifies on which row-line to stop displaying the item, or how many rows to span.
+ * @param {'length'} [options.grid.row.gap] - Default: null - defines the size of the gap between the rows in a grid layout.
+ * @param {('auto'|'row-line')} [options.grid.row.start] - Default: null - Specifies on which row to start displaying the item.
+ * @param {Object} [options.grid.template] - Default: null - rules for a CSS grid layout
+ * @param {('none'|'itemnames')} [options.grid.template.areas] - Default: null - specifies areas within the grid layout.
+ * @param {('none'|'auto'|'max-content'|'min-content'|'length'|'initial'|'inherit')} [options.grid.template.columns] - Default: null - specifies the number (and the widths) of columns in a grid layout.
+ * @param {('none'|'auto'|'max-content'|'min-content'|'length'|'initial'|'inherit')} [options.grid.template.rows] - Default: null - specifies the number (and the heights) of the rows in a grid layout.
+ * @param {Object} [options.column] - CSS column properties
+ * @param {('number'|'auto'|'initial'|'inherit')} [options.column.count] - Default: null - The optimal number of columns into which the content of the element will be flowed. Default value is auto where the number of columns will be determined by other properties, like e.g. "column-width"
+ * @param {('length'|'normal'|'initial'|'inherit')} [options.column.gap] - Default: null - A specified length that will set the gap between the columns
+ * @param {('auto'|'length'|'initial'|'inherit')} [options.column.width] - Default: null - A length that specifies the width of the columns. The number of columns will be the minimum number of columns needed to show all the content across the element. Read about length units
+ * @param {Object} [options.column.rule] - Default: null - The column-rule property sets the width, style, and color of the rule between columns.
+ * @param {('color'|'initial'|'inherit')} [options.column.rule.color] - Default: null - Sets the color of the rule between columns.
+ * @param {('medium'|'thin'|'thick'|'length'|'initial'|'inherit')} [options.column.rule.width] - Default: null - Default: null - Sets the width of the rule between columns.
+ * @param {('auto'|'length'|'initial'|'inherit')} [options.top] - Default: null - Sets the top edge position
+ * @param {('auto'|'length'|'initial'|'inherit')} [options.bottom] - Default: null - Sets the bottom edge position
+ * @param {('auto'|'length'|'initial'|'inherit')} [options.left] - Default: null - Sets the left edge position
+ * @param {('auto'|'length'|'initial'|'inherit')} [options.right] - Default: null - Sets the right edge position
+ * @param {Object} [options.background] - CSS background properties
+ * @param {('color'|'transparent'|'initial'|'inherit')} [options.background.color] - Default: null - A CSS valid color for the background
+ * @param {('left top'|'left center'|'left bottom'|'right top'|'right center'|'right bottom'|'center top'|'center center'|'center bottom'|'x% y%'|'xpos ypos'|'initial'|'inherit')} [options.background.position] - Default: null - sets the starting position of a background image.
+ * @param {('auto'|'length'|'cover'|'contain'|'initial'|'inherit')} [options.background.size] - Default: null - specifies the size of the background images.
+ * @param {Object} [options.border] - CSS border properties
+ * @param {Object} [options.border.all] - Affects all sides of the element
+ * @param {('medium'|'thin'|'thick'|'length'|'initial'|'inherit')} [options.border.all.width] - Default: null - The width of the border
+ * @param {('color'|'transparent'|'initial'|'inherit')} [options.border.all.color] - Default: null - The color for the border
+ * @param {('length'|'initial'|'inherit')} [options.border.all.spacing] - Default: null - The space in px between the element and the border
+ * @param {Object} [options.border.top] - Affects the top sides of the element
+ * @param {('medium'|'thin'|'thick'|'length'|'initial'|'inherit')} [options.border.top.width] - Default: null - The width of the border
+ * @param {('color'|'transparent'|'initial'|'inherit')} [options.border.top.color] - Default: null - The color for the border
+ * @param {('length'|'%')} [options.border.top.leftRadius] - Default: null - Defines the shape of the top left corner
+ * @param {('length'|'%')} [options.border.top.rightRadius] - Default: null - Defines the shape of the top right corner
+ * @param {Object} [options.border.bottom] - Affects the bottom of the element
+ * @param {('medium'|'thin'|'thick'|'length'|'initial'|'inherit')} [options.border.bottom.width] - Default: null - The width of the border
+ * @param {('color'|'transparent'|'initial'|'inherit')} [options.border.bottom.color] - Default: null - The color for the border
+ * @param {('length'|'%')} [options.border.bottom.leftRadius] - Default: null - Defines the shape of the top left corner
+ * @param {('length'|'%')} [options.border.bottom.rightRadius] - Default: null - Defines the shape of the top right corner
+ * @param {Object} [options.border.left] - Affects the left of the element
+ * @param {('medium'|'thin'|'thick'|'length'|'initial'|'inherit')} [options.border.left.width] - Default: null - The width of the border
+ * @param {('color'|'transparent'|'initial'|'inherit')} [options.border.left.color] - Default: null - The color for the border
+ * @param {Object} [options.border.right] - Affects the right of the element
+ * @param {('medium'|'thin'|'thick'|'length'|'initial'|'inherit')} [options.border.right.width] - Default: null - The width of the border
+ * @param {('color'|'transparent'|'initial'|'inherit')} [options.border.right.color] - Default: null - The color for the border
+ * @param {Object} [options.boxShadow] - CSS box-shadow properties
+ * @param {number} [options.boxShadow.hOffset] - Default: null - REQUIRED The horizontal offset of the shadow. A positive value puts the shadow on the right side of the box, a negative value puts the shadow on the left side of the box
+ * @param {number} [options.boxShadow.vOffset] - Default: null - REQUIRED The vertical offset of the shadow. A positive value puts the shadow below the box, a negative value puts the shadow above the box
+ * @param {number} [options.boxShadow.blur] - Default: null - The blur radius. The higher the number, the more blurred the shadow will be
+ * @param {number} [options.boxShadow.spread] - Default: null - The spread radius. A positive value increases the size of the shadow, a negative value decreases the size of the shadow
+ * @param {string} [options.boxShadow.color] - Default: null - The color of the shadow. The default value is the text color. Look at CSS Color Values for a complete list of possible color values. Note: In Safari (on PC) the color parameter is If you do not specify the color, the shadow is not displayed at all.
+ * @param {boolean} [options.boxShadow.inset] - Default: null - Changes the shadow from an outer shadow (outset) to an inner shadow
+ * @param {Object} [options.font] - CSS font & text properties
+ * @param {('color'|'initial'|'inherit')} [options.font.color] - Default: null - The color to style the font
+ * @param {('medium'|'xx-small'|'x-small'|'small'|'large'|'x-large'|'xx-large'|'smaller'|'larger'|'length'|'initial'|'inherit')} [options.font.fontSize] - Default: null - sets the size of a font
+ * @param {('normal'|'bold'|'bolder'|'lighter'|'100'|'200'|'300'|'400'|'500'|'600'|'700'|'800'|'900')} [options.font.fontWeight] - Default: null - The line thickness for the font
+ * @param {('color'|'initial'|'inherit')} [options.font.decorationColor] - Default: null - Specifies the color of the text-decoration
+ * @param {Object} [options.font.shadow] - Default: null - adds shadow to text.
+ * @param {number} [options.font.shadow.hShadow] - Default: null - Specifies a pixel value for the horizontal shadow. Negative values place the shadow to the left of the text.
+ * @param {number} [options.font.shadow.vShadow] - Default: null - Specifies a pixel value for the vertical shadow. Negative values place the shadow above the text.
+ * @param {number} [options.font.shadow.blurRadius] - Default: null - This is the third value, and must be in pixels. Adds a blur effect to the shadow. A larger value will create more blur (the shadow becomes bigger and lighter). Negative values are not allowed. If no value is specified, 0 is used (the shadow's edge is sharp).
+ * @param {string} [options.font.shadow.color] - Default: null - The color for the text shadow
+ * @param {Object} [options.filter] - CSS filter properties
+ * @param {number} [options.filter.blur] - Default: null - Applies a blur effect to the image. A larger value will create more blur. If no value is specified, 0 is used.
+ * @param {number} [options.filter.brightness] - Default: null - Adjusts the brightness of the image. 0% will make the image completely black. 100% (1) is default and represents the original image. Values over 100% will provide brighter results.
+ * @param {number} [options.filter.contrast] - Default: null - Adjusts the contrast of the image. 0% will make the image completely black. 100% (1) is default, and represents the original image. Values over 100% will provide results with more contrast.
+ * @param {Object} [options.filter.dropShadow] - Default: null - Applies a Drop shadow Filter
+ * @param {number} [options.filter.dropShadow.hShadow] - Default: null - Specifies a pixel value for the horizontal shadow. Negative values place the shadow to the left of the image.
+ * @param {number} [options.filter.dropShadow.vShadow] - Default: null - Specifies a pixel value for the vertical shadow. Negative values place the shadow above the image.
+ * @param {number} [options.filter.dropShadow.blur] - Default: null - This is the third value, and must be in pixels. Adds a blur effect to the shadow. A larger value will create more blur (the shadow becomes bigger and lighter). Negative values are not allowed. If no value is specified, 0 is used (the shadow's edge is sharp).
+ * @param {number} [options.filter.dropShadow.spread] - Default: null - This is the fourth value, and must be in pixels. Positive values will cause the shadow to expand and grow bigger, and negative values will cause the shadow to shrink. If not specified, it will be 0 (the shadow will be the same size as the element). Note: Chrome, Safari and Opera, and maybe other browsers, do not support this 4th length; it will not render if added.
+ * @param {number} [options.filter.grayscale] - Default: null - Converts the image to grayscale. 0% (0) is default and represents the original image. 100% will make the image completely gray (used for black and white images). Note: Negative values are not allowed.
+ * @param {number} [options.filter.hueRotate] - Default: null - Applies a hue rotation on the image. The value defines the number of degrees around the color circle the image samples will be adjusted. 0deg is default, and represents the original image.Note: Maximum value is 360deg.    
+ * @param {number} [options.filter.invert] - Default: null - Inverts the samples in the image. 0% (0) is default and represents the original image. 100% will make the image completely inverted. Note: Negative values are not allowed.
+ * @param {number} [options.filter.opacity] - Default: null - Sets the opacity level for the image. The opacity-level describes the transparency-level, where: 0% is completely transparent. 100% (1) is default and represents the original image (no transparency). Note: Negative values are not allowed. Tip: This filter is similar to the opacity property.
+ * @param {number} [options.filter.saturate] - Default: null - Saturates the image. 0% (0) will make the image completely un-saturated. 100% is default and represents the original image. Values over 100% provides super-saturated results. Note: Negative values are not allowed.
+ * @param {number} [options.filter.sepia] - Default: null - Converts the image to sepia. 0% (0) is default and represents the original image. 100% will make the image completely sepia. Note: Negative values are not allowed.
+ * @param {Object} [options.fade] - CSS fade properties
+ * @param {number} [options.fade.opacity] - Default: null - Specifies the opacity. From 0.0 (fully transparent) to 1.0 (fully opaque)
+ * @param {Object} [options.outline] - CSS outline properties
+ * @param {('invert'|'color'|'initial'|'inherit')} [options.outline.color] - Default: null - Sets the color of the outline
+ * @param {('medium'|'thin'|'thick'|'length'|'initial'|'inherit')} [options.outline.width] - Default: null - Sets the width of the outline
+ * @param {('length'|'initial'|'inherit')} [options.outline.offset] - Default: null - The distance the outline is outset from the border edge. Default value is 0
+ * @param {Object} [options.transform] - CSS transform properties
+ * @param {Object} [options.transform.matrix] - Default: null - Defines a 2D transformation, using a matrix of six values
+ * @param {number} [options.transform.matrix.n1] - Default: null - matrix 1
+ * @param {number} [options.transform.matrix.n2] - Default: null - matrix 2
+ * @param {number} [options.transform.matrix.n3] - Default: null - matrix 3
+ * @param {number} [options.transform.matrix.n4] - Default: null - matrix 4
+ * @param {number} [options.transform.matrix.n5] - Default: null - matrix 5
+ * @param {number} [options.transform.matrix.n6] - Default: null - matrix 6
+ * @param {Object} [options.transform.matrix3d] - Default: null - Defines a 3D transformation, using a 4x4 matrix of 16 values
+ * @param {number} [options.transform.matrix3d.n1] - Default: null - matrix 1
+ * @param {number} [options.transform.matrix3d.n2] - Default: null - matrix 2
+ * @param {number} [options.transform.matrix3d.n3] - Default: null - matrix 3
+ * @param {number} [options.transform.matrix3d.n4] - Default: null - matrix 4
+ * @param {number} [options.transform.matrix3d.n5] - Default: null - matrix 5
+ * @param {number} [options.transform.matrix3d.n6] - Default: null - matrix 6
+ * @param {number} [options.transform.matrix3d.n7] - Default: null - matrix 7
+ * @param {number} [options.transform.matrix3d.n8] - Default: null - matrix 8
+ * @param {number} [options.transform.matrix3d.n9] - Default: null - matrix 9
+ * @param {number} [options.transform.matrix3d.n10] - Default: null - matrix 10
+ * @param {number} [options.transform.matrix3d.n11] - Default: null - matrix 11
+ * @param {number} [options.transform.matrix3d.n12] - Default: null - matrix 12
+ * @param {number} [options.transform.matrix3d.n13] - Default: null - matrix 13
+ * @param {number} [options.transform.matrix3d.n14] - Default: null - matrix 14
+ * @param {number} [options.transform.matrix3d.n15] - Default: null - matrix 15
+ * @param {number} [options.transform.matrix3d.n16] - Default: null - matrix 16
+ * @param {Object} [options.transform.translate] - Default: null - Defines a 2D or 3D translation
+ * @param {number} [options.transform.translate.x] - Default: null - Defines a translation, using only the value for the x-axis
+ * @param {number} [options.transform.translate.y] - Default: null - Defines a translation, using only the value for the y-axis
+ * @param {number} [options.transform.translate.z] - Default: null - Defines a 3D translation, using only the value for the z-axis
+ * @param {Object} [options.transform.scale] - Default: null - Defines a 2D or 3D scale transform
+ * @param {number} [options.transform.scale.x] - Default: null - Defines a scale transformation by giving a value for the X-axis
+ * @param {number} [options.transform.scale.y] - Default: null - Defines a scale transformation by giving a value for the Y-axis
+ * @param {number} [options.transform.scale.z] - Default: null - Defines a 3D scale transformation by giving a value for the Z-axis
+ * @param {number} [options.transform.rotate] - Default: null - Defines a 2D rotation, the angle is specified in the value
+ * @param {Object} [options.transform.rotate3d] - Default: null - Defines a 3D rotation
+ * @param {number} [options.transform.rotate3d.x] - Default: null - Defines a 3D rotation along the x-axis
+ * @param {number} [options.transform.rotate3d.y] - Default: null - Defines a 3D rotation along the y-axis
+ * @param {number} [options.transform.rotate3d.z] - Default: null - Defines a 3D rotation along the z-axis
+ * @param {Object} [options.transform.skew] - Default: null - Defines a 2D skew transformation along the X- and the Y-axis
+ * @param {number} [options.transform.skew.x] - Default: null - Defines a 2D skew transformation along the x-axis
+ * @param {number} [options.transform.skew.y] - Default: null - Defines a 2D skew transformation along the y-axis
