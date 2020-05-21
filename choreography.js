@@ -1689,10 +1689,9 @@ export async function orbit(element, options = {}){
     });
 }
 
-// React Component \\
 /**
- * - Choreograph with a capital 'C' is a React component for crudely wrapping Elements in an empty Animatable container that does not affect the layout of the page.
- * - All props passed through will be applied to the <div> element that is the main wrapper for the animations, allowing for custom events and the use of 'refs'
+ * Choreograph with a capital 'C' is a React component for crudely wrapping Elements in an empty Animatable container that does not affect the layout of the page.
+ * @param {Object} props The props object to pass to the container element
  */
 export default function Choreograph(props){
     import('react')
