@@ -1,5 +1,6 @@
 // --- GENERATE NEW DOCUMENTATION ---
 // cmd: jsdoc README.md choreography.js -t node_modules/clean-jsdoc-theme
+// cmd: jsdoc README.md choreography.js -t node_modules/jsdoc-one-page
 
 /**
  * Set an array to a fixed length
